@@ -1,13 +1,23 @@
-import { Card, CardDescription, CardHeader } from "../../ui/card";
-import React from 'react'
+import CustomCard from "../../ui/Card";
+
+import { AiOutlineUserAdd } from "react-icons/ai";
+
 
 const AddNewUser = () => {
+
+  const handleButtonClick = () => {
+    console.log('User Added');
+  };
+
   return (
     <div className="bg-green-300">
-        <Card>
-            <CardHeader>Add New User</CardHeader>
-            <CardDescription></CardDescription>
-        </Card>
+        <CustomCard
+          header="Add New User"
+          icon={AiOutlineUserAdd}
+          description="Add the new user"
+          buttonText="Add the user"
+          onButtonClick={handleButtonClick}
+        />
     </div>
   )
 }

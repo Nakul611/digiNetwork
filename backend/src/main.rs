@@ -1,37 +1,26 @@
-use postgres::{Client, Error};
+use actix_web::{App, HttpServer};
+use postgres::{Client, NoTls};
 
-fn main() {
-    if let Err(e) = run() {
-        eprintln!("Error: {}", e);
-    }
-}
+mod routes;
+mod db;
+mod model;
 
-fn run() -> Result<(), Error> {
+#[actix_web::main]
+async fn main() -> std::io::Result<()> {
     // Connect to the PostgreSQL database
-    let mut client = Client::connect("postgresql://postgres:qwertyasdfgh@localhost/library", postgres::NoTls)?;
+    let mut client = Client::connect("postgresql://postgres:qwertyasdfgh@localhost/", NoTls)?;
+    let client = client.transaction()?;
 
-    // Define SQL statements to create tables
-    let create_author_table = r#"
-        CREATE TABLE IF NOT EXISTS author (
-            id SERIAL PRIMARY KEY,
-            name VARCHAR(255) NOT NULL,
-            country VARCHAR(255) NOT NULL
-        )
-    "#;
-
-    let create_book_table = r#"
-        CREATE TABLE IF NOT EXISTS book (
-            id SERIAL PRIMARY KEY,
-            title VARCHAR(255) NOT NULL,
-            author_id INTEGER NOT NULL REFERENCES author(id)
-        )
-    "#;
-
-    // Execute SQL statements to create tables
-    client.batch_execute(create_author_table)?;
-    client.batch_execute(create_book_table)?;
-
-    println!("Tables created successfully");
-    
-    Ok(())
+    // Start the Actix Web server
+    HttpServer::new(move || {
+        App::new()
+            .data(client.clone())
+            .service(routes::create_record)
+            .service(routes::get_records)
+            .service(routes::update_record)
+            .service(routes::delete_record)
+    })
+    .bind("127.0.0.1:8080")?
+    .run()
+    .await
 }

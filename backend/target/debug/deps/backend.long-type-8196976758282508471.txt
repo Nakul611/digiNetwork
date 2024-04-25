@@ -1,0 +1,1 @@
+fn(Json<Record>) -> impl std::future::Future<Output = impl Responder> {routes::create_record}

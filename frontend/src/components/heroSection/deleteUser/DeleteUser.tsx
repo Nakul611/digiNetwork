@@ -1,13 +1,21 @@
-import { Card, CardHeader } from '../../ui/card'
-import React from 'react'
+import { AiOutlineUserDelete } from 'react-icons/ai'
+import CustomCard from '../../ui/Card'
 
 const DeleteUser = () => {
+
+  const handleButtonClick = () => {
+    console.log('User Deleted');
+  };
+
   return (
     <div className='bg-red-300'>
-        <Card>
-            <CardHeader>Delete User</CardHeader>
-            
-        </Card>
+        <CustomCard
+          header="Delete User"
+          icon={AiOutlineUserDelete}
+          description="Delete the user details"
+          buttonText="Delete"
+          onButtonClick={handleButtonClick}
+        />
     </div>  
 )}
 
