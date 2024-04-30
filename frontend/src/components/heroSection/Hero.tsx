@@ -4,7 +4,7 @@ import EditUser from "./editUser/EditUser"
 
 const Hero = () => {
   return (
-    <div className="flex space-x-5 p-24 justify-center items-center">
+    <div className="flex space-x-12 p-24 justify-center items-center">
       <AddNewUser />
       <EditUser />
       <DeleteUser />

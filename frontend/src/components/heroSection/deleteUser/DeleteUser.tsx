@@ -1,5 +1,5 @@
 import { AiOutlineUserDelete } from 'react-icons/ai'
-import CustomCard from '../../ui/Card'
+import CustomCard from '../../../constants/ui/Card'
 
 const DeleteUser = () => {
 
@@ -13,7 +13,6 @@ const DeleteUser = () => {
           header="Delete User"
           icon={AiOutlineUserDelete}
           description="Delete the user details"
-          buttonText="Delete"
           onButtonClick={handleButtonClick}
         />
     </div>  

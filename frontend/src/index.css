@@ -5,4 +5,5 @@
 :root, body{
   background: #fff;
   font-family: "Libre Franklin", sans-serif;
+  background-size: cover;
 }

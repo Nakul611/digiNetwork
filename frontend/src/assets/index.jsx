@@ -1,4 +1,4 @@
-import theNetwork from "./images/theNetwork.png"
+import theNetwork from "./images/theNetwork.png";
 
 export {
   theNetwork,

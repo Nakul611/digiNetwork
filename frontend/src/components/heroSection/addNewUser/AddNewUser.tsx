@@ -1,6 +1,7 @@
-import CustomCard from "../../ui/Card";
-
 import { AiOutlineUserAdd } from "react-icons/ai";
+
+import CustomCard from "../../../constants/ui/Card";
+import AddNewUserContent from "./components/AddNewUserContent";
 
 
 const AddNewUser = () => {
@@ -15,9 +16,9 @@ const AddNewUser = () => {
           header="Add New User"
           icon={AiOutlineUserAdd}
           description="Add the new user"
-          buttonText="Add the user"
           onButtonClick={handleButtonClick}
         />
+        {/* <AddNewUserContent/> */}
     </div>
   )
 }

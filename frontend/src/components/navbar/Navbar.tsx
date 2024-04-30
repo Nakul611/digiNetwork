@@ -18,7 +18,7 @@ const Navbar = () => {
         <img src={theNetwork} alt="logo" className="h-10 rounded-full hover:border border-black duration-300 transition-all"/>
       </div>
       <div>
-      <ul className="flex space-x-8 ml-20">
+      <ul className="flex space-x-10 text-lg ml-20">
         {NavLinks.map(({ _id, title, link }) => (
           <li key={_id} className="relative">
             <Link
@@ -28,7 +28,7 @@ const Navbar = () => {
               smooth={true}
               offset={-70}
               duration={500}
-              className="text-sm duration-300 hover:text-blue-300 relative"
+              className="text-sm duration-300 hover:text-green-300 relative"
             >
               {title}
             </Link>
