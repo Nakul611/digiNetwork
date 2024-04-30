@@ -4,10 +4,12 @@ use postgres::{Client, Error};
 use crate::model::Record;
 
 pub fn create_record(new_record: Record, client: Option<&Client>) -> Result<(), Error> {
+    let client = client.expect("Expected a database client");
     let query = "INSERT INTO records (name, phone_number, address) VALUES ($1, $2, $3)";
     client.execute(query, &[&new_record.name, &new_record.phone_number, &new_record.address])?;
     Ok(())
 }
+
 
 pub fn read_records(client: &Client) -> Result<Vec<Record>, Error> {
     let query = "SELECT * FROM records";

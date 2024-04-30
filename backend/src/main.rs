@@ -1,5 +1,6 @@
 use actix_web::{App, HttpServer};
 use postgres::{Client, NoTls};
+use std::io::Error;
 
 mod routes;
 mod db;
@@ -16,7 +17,7 @@ async fn main() -> std::io::Result<()> {
         App::new()
             .data(client.clone())
             .service(routes::create_record)
-            .service(routes::get_records)
+            .service(routes::read_records)
             .service(routes::update_record)
             .service(routes::delete_record)
     })

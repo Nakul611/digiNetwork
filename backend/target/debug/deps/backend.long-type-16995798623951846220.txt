@@ -1,1 +1,0 @@
-fn(actix_web::web::Path<(i64,)>) -> impl std::future::Future<Output = impl Responder> {routes::delete_record}

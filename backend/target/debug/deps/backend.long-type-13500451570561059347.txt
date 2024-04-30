@@ -1,1 +1,0 @@
-fn(actix_web::web::Path<(i64,)>, Json<Record>) -> impl std::future::Future<Output = impl Responder> {routes::update_record}
