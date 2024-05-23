@@ -1,10 +1,13 @@
 import { LiaUserEditSolid } from 'react-icons/lia'
 import CustomCard from '../../../constants/ui/Card'
 
-const EditUser = () => {
+import { useNavigate } from 'react-router-dom';
 
-  const handleButtonClick = () => {
-    console.log('User Edited');
+const EditUser: React.FC = () => {
+  const navigate = useNavigate();
+
+  const handleEditUser = () => {
+    navigate('/edituser');
   };
 
   return (
@@ -13,10 +16,10 @@ const EditUser = () => {
           header="Edit User"
           icon={LiaUserEditSolid}
           description="Edit the user details"
-          onButtonClick={handleButtonClick}
+          onButtonClick={handleEditUser}
         />
     </div>
   )
 }
 
-export default EditUser
+export default EditUser;

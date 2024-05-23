@@ -1,11 +1,15 @@
 import { AiOutlineUserDelete } from 'react-icons/ai'
 import CustomCard from '../../../constants/ui/Card'
 
-const DeleteUser = () => {
+import { useNavigate } from 'react-router-dom';
 
-  const handleButtonClick = () => {
-    console.log('User Deleted');
+const DeleteUser: React.FC = () => {
+  const navigate = useNavigate();
+
+  const handleDeleteUser = () => {
+    navigate('/deleteuser');
   };
+
 
   return (
     <div className='bg-red-300'>
@@ -13,9 +17,9 @@ const DeleteUser = () => {
           header="Delete User"
           icon={AiOutlineUserDelete}
           description="Delete the user details"
-          onButtonClick={handleButtonClick}
+          onButtonClick={handleDeleteUser}
         />
     </div>  
 )}
 
-export default DeleteUser
+export default DeleteUser;

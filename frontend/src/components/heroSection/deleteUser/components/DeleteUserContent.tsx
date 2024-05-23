@@ -1,11 +1,12 @@
 import InputUserIdForm from '../../../../constants/ui/InputUserIdForm'
 
-const AddNewUserContent = () => {
+const DeleteUserContent = () => {
   return (
-    <div className='p-12'>
+    <div>
+        Delete
         <InputUserIdForm link="/addnewuser"/>
     </div>
   )
 }
 
-export default AddNewUserContent;
+export default DeleteUserContent;

@@ -1,14 +1,15 @@
 import { AiOutlineUserAdd } from "react-icons/ai";
 
 import CustomCard from "../../../constants/ui/Card";
-import AddNewUserContent from "./components/AddNewUserContent";
+import { useNavigate } from 'react-router-dom';
 
-
-const AddNewUser = () => {
+const AddNewUser: React.FC = () => {
+  const navigate = useNavigate();
 
   const handleButtonClick = () => {
-    console.log('User Added');
+    navigate('/addnewuser');
   };
+
 
   return (
     <div className="bg-green-300">

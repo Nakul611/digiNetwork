@@ -13,9 +13,9 @@ const Navbar = () => {
   };
 
   return (
-    <div className="flex justify-between items-center px-10 py-4 h-14 text-black">
-      <div>
-        <img src={theNetwork} alt="logo" className="h-10 rounded-full hover:border border-black duration-300 transition-all"/>
+    <div className="flex justify-between items-center px-10 py-4 h-12 text-black bg-slate-200">
+      <div className="p-2">
+        <img src={theNetwork} alt="logo" className="p-1 h-10 rounded-full border-black duration-300 transition-all hover:scale-75 fixed"/>
       </div>
       <div>
       <ul className="flex space-x-10 text-lg ml-20">
