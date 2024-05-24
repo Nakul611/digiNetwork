@@ -29,14 +29,14 @@ const SlidingWindow = () => {
         <button
           onClick={handlePrev}
           aria-label="Previous Image"
-          className='ml-6 text-2xl text-white hover:text-black hover:shadow-2xl rounded-full'
+          className='ml-2 md:ml-6 text-2xl text-white hover:text-black hover:shadow-2xl rounded-full p-1 md:p-2'
         >
           <AiOutlineLeft />
         </button>
         <button
           onClick={handleNext}
           aria-label="Next Image"
-          className='mr-6 text-2xl text-white hover:text-black hover:shadow-lg rounded-full'
+          className='mr-2 md:mr-6 text-2xl text-white hover:text-black hover:shadow-lg rounded-full p-1 md:p-2'
         >
           <AiOutlineRight />
         </button>

@@ -9,7 +9,7 @@ mod model;
 #[actix_web::main]
 async fn main() -> std::io::Result<()> {
     // Connect to the PostgreSQL database
-    let mut client = Client::connect("postgresql://postgres:qwertyasdfgh@localhost/", NoTls)?;
+    let mut client = Client::connect("postgresql://postgres:qwertyasdfgh@localhost/library", NoTls)?;
     let client = client.transaction()?;
 
     // Start the Actix Web server
